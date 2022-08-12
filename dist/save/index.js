@@ -61819,7 +61819,7 @@ class CacheConfig {
     }
 }
 async function getRustVersion() {
-    const stdout = await getCmdOutput("rustc", ["-vV"]);
+    const stdout = await getCmdOutput("nix", ["develop", "-c", "'rustc -vV'"]);
     let splits = stdout
         .split(/[\n\r]+/)
         .filter(Boolean)
